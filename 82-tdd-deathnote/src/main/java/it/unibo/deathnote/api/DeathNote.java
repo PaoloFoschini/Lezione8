@@ -8,7 +8,6 @@ import java.util.List;
  * in order to use it properly.
  */
 public interface DeathNote {
-
     /**
      * Returns the list of rules for this DeathNote.
      */
