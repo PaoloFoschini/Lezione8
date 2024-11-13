@@ -5,7 +5,7 @@ import java.util.Map;
 
 import it.unibo.deathnote.api.DeathNote;
 
-class DeathNoteImplementation implements DeathNote{
+public class DeathNoteImplementation implements DeathNote{
     final Map<String, HumanInfo> deathnote = new HashMap<>();
     float act;
     String lastName;
@@ -66,6 +66,12 @@ class DeathNoteImplementation implements DeathNote{
                 deathnote.put(lastName, hi);
             }
             return true;
+        }else{
+            if(deathnote.containsKey(lastName)) {
+                HumanInfo hi = deathnote.get(lastName);
+                hi.setCause("heart attack");
+                deathnote.put(lastName, hi);
+            }
         }
         act = System.currentTimeMillis();
         return false;
